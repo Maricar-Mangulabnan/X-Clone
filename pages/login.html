@@ -11,11 +11,7 @@
   <div class="flex flex-col lg:flex-row flex-grow">
     <!-- Left Side -->
     <div class="hidden lg:flex items-center justify-end w-1/2 bg-black">
-      <img
-        src="../assets/logo.png"
-        alt="X Logo"
-        class="w-80 h-80 p-2"
-      />
+      <img src="../assets/logo.png" alt="X Logo" class="w-80 h-80 p-2" />
     </div>
 
     <!-- Right Side -->
@@ -23,27 +19,17 @@
       <!-- Heading -->
       <div class="text-start mb-4">
         <h1 class="text-6xl font-bold mb-10">Happening now</h1>
-        <p class="text-2xl mt-4 font-bold ">Join today.</p>
+        <p class="text-2xl mt-4 font-bold">Join today.</p>
       </div>
 
       <!-- Sign Up Options -->
       <div class="w-full max-w-md">
-        <button
-          class="w-1/2 mb-2 flex items-center justify-start px-4 py-2 bg-white text-black rounded-full border border-gray-700 hover:bg-gray-100 ">
-          <img
-            src="https://e7.pngegg.com/pngimages/882/225/png-clipart-google-logo-google-logo-google-search-icon-google-text-logo-thumbnail.png"
-            alt="Google"
-            class="w-5 h-5 mr-2"
-          />
+        <button class="w-1/2 mb-2 flex items-center justify-start px-4 py-2 bg-white text-black rounded-full border border-gray-700 hover:bg-gray-100">
+          <img src="https://e7.pngegg.com/pngimages/882/225/png-clipart-google-logo-google-logo-google-search-icon-google-text-logo-thumbnail.png" alt="Google" class="w-5 h-5 mr-2" />
           Sign up with Google
         </button>
-        <button
-          class="w-1/2 flex items-center justify-start px-4 py-2 bg-white text-black rounded-full border border-gray-700 hover:bg-gray-100 font-medium">
-          <img
-            src="https://cdn.iconscout.com/icon/free/png-256/free-apple-logo-icon-download-in-svg-png-gif-file-formats--70-flat-social-icons-color-pack-logos-432495.png?f=webp&w=256"
-            alt="Apple"
-            class="w-5 h-5 mr-2"
-          />
+        <button class="w-1/2 flex items-center justify-start px-4 py-2 bg-white text-black rounded-full border border-gray-700 hover:bg-gray-100 font-medium">
+          <img src="https://cdn.iconscout.com/icon/free/png-256/free-apple-logo-icon-download-in-svg-png-gif-file-formats--70-flat-social-icons-color-pack-logos-432495.png?f=webp&w=256" alt="Apple" class="w-5 h-5 mr-2" />
           Sign up with Apple
         </button>
         <div class="w-1/2 flex items-center justify-start my-2 text-gray-400">
@@ -54,32 +40,49 @@
         <button class="w-1/2 px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600">
           Create account
         </button>
-        <p class="text-xs w-1/2 text-gray-400 ">By signing up, you agree to the Terms of Service and Privacy Policy, including Cookie Use.</p>
+        <p class="text-xs w-1/2 text-gray-400">By signing up, you agree to the Terms of Service and Privacy Policy, including Cookie Use.</p>
       </div>
 
       <!-- Sign In Section -->
-      <div class="w-full max-w-md   ">
+      <div class="w-full max-w-md">
         <p class="text-start justify-start mr-auto text-gray-100 font-bold mt-6">Already have an account?</p>
-        <button
-          class="w-1/2 text-center px-6 py-2 text-blue-500 font-bold rounded-full border mt-5"
-        >
+        <button id="signInBtn" class="w-1/2 text-center px-6 py-2 text-blue-500 font-bold rounded-full border mt-5">
           Sign in
         </button>
       </div>
     </div>
   </div>
 
+  <!-- Modals -->
+  <!-- Email Modal -->
+  <div id="emailModal" class="hidden fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center">
+    <div class="bg-gray-800 text-white rounded-lg p-6 w-96">
+      <h2 class="text-lg font-bold mb-4">Sign In</h2>
+      <input id="emailInput" type="email" placeholder="Enter your email" class="w-full px-4 py-2 border border-gray-600 rounded bg-black text-white placeholder-gray-500 focus:outline-none focus:ring focus:ring-blue-500" />
+      <p id="emailError" class="hidden text-red-500 text-sm mt-2">Incorrect email. Try again.</p>
+      <div class="flex justify-end mt-4">
+        <button id="emailNextBtn" class="px-4 py-2 bg-blue-500 rounded hover:bg-blue-600 text-white">Next</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Password Modal -->
+  <div id="passwordModal" class="hidden fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center">
+    <div class="bg-gray-800 text-white rounded-lg p-6 w-96">
+      <h2 class="text-lg font-bold mb-4">Enter Password</h2>
+      <input id="passwordInput" type="password" placeholder="Enter your password" class="w-full px-4 py-2 border border-gray-600 rounded bg-black text-white placeholder-gray-500 focus:outline-none focus:ring focus:ring-blue-500" />
+      <p id="passwordError" class="hidden text-red-500 text-sm mt-2">Incorrect password. Try again.</p>
+      <div class="flex justify-end mt-4">
+        <button id="loginBtn" class="px-4 py-2 bg-blue-500 rounded hover:bg-blue-600 text-white">Login</button>
+      </div>
+    </div>
+  </div>
+
+
+
   <!-- Footer -->
   <footer class="w-full py-4 text-center bg-black text-gray-500 mt-8">
-    <div class="flex flex-wrap items-center justify-center gap-4 text-sm ">
-      <a href="#" class="hover:underline">About</a>
-      <a href="#" class="hover:underline">Terms of Service</a>
-      <a href="#" class="hover:underline">Privacy Policy</a>
-      <a href="#" class="hover:underline">Cookie Policy</a>
-      <a href="#" class="hover:underline">Accessibility</a>
-      <a href="#" class="hover:underline">Help Center</a>
-      <a href="#" class="hover:underline">Blog</a>
-      <a href="#" class="hover:underline">Careers</a>
+    <div class="flex flex-wrap items-center justify-center gap-4 text-sm">
       <a href="#" class="hover:underline">About</a>
       <a href="#" class="hover:underline">Terms of Service</a>
       <a href="#" class="hover:underline">Privacy Policy</a>
@@ -91,5 +94,45 @@
     </div>
     <p class="mt-4">© 2025 X Corp.</p>
   </footer>
+
+  <script>
+    // Elements
+    const signInBtn = document.getElementById("signInBtn");
+    const emailModal = document.getElementById("emailModal");
+    const passwordModal = document.getElementById("passwordModal");
+    const emailNextBtn = document.getElementById("emailNextBtn");
+    const loginBtn = document.getElementById("loginBtn");
+    const emailInput = document.getElementById("emailInput");
+    const passwordInput = document.getElementById("passwordInput");
+    const emailError = document.getElementById("emailError");
+    const passwordError = document.getElementById("passwordError");
+
+    // Open Email Modal
+    signInBtn.addEventListener("click", () => {
+      emailModal.classList.remove("hidden");
+    });
+
+    // Validate Email and Open Password Modal
+    emailNextBtn.addEventListener("click", () => {
+      if (emailInput.value === "maricar@gmail.com") {
+        emailError.classList.add("hidden");
+        emailModal.classList.add("hidden");
+        passwordModal.classList.remove("hidden");
+      } else {
+        emailError.classList.remove("hidden");
+      }
+    });
+
+    // Validate Password and Redirect
+    loginBtn.addEventListener("click", () => {
+      if (passwordInput.value === "kangkang") {
+        passwordError.classList.add("hidden");
+        window.location.href = "home.html";
+      } else {
+        passwordError.classList.remove("hidden");
+      }
+    });
+  </script>
+  
 </body>
 </html>
