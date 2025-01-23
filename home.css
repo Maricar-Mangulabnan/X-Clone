@@ -1061,4 +1061,51 @@ video {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
+  
+  .prof{
+    position:absolute;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover; 
+    margin-left: 10px;
+    margin-top: 108px;
+    border-color: black; 
+    
+  
+  }
+  .space{
+    margin-top: 200px;
+    height: 100px;
+    color: gray;
+
+  }
+  .space1{
+    margin-top: 300px;
+    height: 200px;
+  }
+  .color{
+    height: 200px;
+    width: 200px;
+    color: gray;
+    position: absolute;
+  }
+  .button1{
+  position: absolute;
+  background-color:black;
+  border: 1px solid ;
+  color: white;
+  padding: 10px 30px;
+  text-align: center;
+  display: inline-block;
+  font-size: 13px;
+  margin-left: 400px;
+  margin-top: 10px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 100px;
+  
+  
+  }
+  
 }
