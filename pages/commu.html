@@ -1,138 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Communities/X</title>
-    <link rel="shortcut icon" href="https://abs.twimg.com/favicons/twitter-pip.3.ico">
-    <style>
-
-
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #000;
-            color: #fff;
-            display: flex;
-        }
-
-        .sidebar {
-            width: 15%;
-            background-color: #000000;
-            padding: 10px;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .sidebar a {
-            text-decoration: none;
-            color: #fff;
-            font-size: 1.2em;
-            margin: 5px 0;
-        }
-
-        .main {
-            flex: 1;
-            padding: 20px;
-            background-color: #131212;
-        }
-
-        .communities-button {
-            background-color: #1D9BF0;
-            color: white;
-            border: none;
-            border-radius: 20px;
-            padding: 10px 20px;
-            font-size: 1em;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .communities-button:hover {
-            background-color: #0d8cd6;
-        }
-
-        .trends-section {
-            background-color: #1A1A1A;
-            border-radius: 10px;
-            padding: 15px;
-            margin-top: 20px;
-        }
-
-        .trends-section h2 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
-        }
-
-        .community-card {
-            background-color: #1A1A1A;
-            border-radius: 10px;
-            padding: 15px;
-            margin-bottom: 15px;
-        }
-
-        .community-card h3 {
-            font-size: 1.2em;
-            margin: 0;
-        }
-
-        .community-card p {
-            font-size: 0.9em;
-            color: #ccc;
-            margin: 5px 0 0;
-        }
-
-        .community-card img {
-            width: 50%;
-            height: auto;
-            border-radius:10px;
-        }
-    </style>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Communities/X</title>
+        <link rel="shortcut icon" href="https://abs.twimg.com/favicons/twitter-pip.3.ico">
+        <link rel="stylesheet"
+                href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+                <link rel="stylesheet" href="/home.css">
 </head>
 
-<body class="bg-black text-white">  
-    <div class="sidebar">
-        <a href="home.html">Home</a>
-        <a href="notification.html">Notifications</a>
-        <a href="">Messages</a>
-        <a href="profile.html">Profile</a>
-      
-    </div>
-    <div class="main">
-        <button class="communities-button">Join a Community</button>
+<body class="bg-black text-white">
+        <div class="flex md:container mx-auto my-4">
+                <div class="first w-16 md:w-[70%] ">
 
-        <div class="community-card">          
-            <h3>Level Up your Gaming</h3>          
-            <p>A space for developers to share and grow together.</p>
-            <img src="pictures/GAMING.PNG.png" alt="Community Image">
+                        <div class="sidebar flex flex-col md:items-end sticky top-0 ">
+                                <div class="logo invert self-start md:mx-11  ">
+                                        <svg viewBox="0 0 24 24" aria-hidden="true"
+                                                class="mx-7 w-8 r-4qtqp9 r-yyyyoo r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-lrsllp r-1nao33i r-16y2uox r-8kz0gk">
+                                                <g>
+                                                        <path
+                                                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z">
+                                                        </path>
+                                                </g>
+                                        </svg>
+                                </div>
+                                <ul class="flex flex-col text-2xl my-5 space-y-3 md:px-6">
+
+                                    <a href="home.html">
+                                        <button
+                                                class="flex md:justify-start items-center justify-center gap-3  md:w-fit px-2 hover:bg-gray-900 hover:cursor-pointer hover:rounded-full">
+                                                <span class="material-symbols-outlined text-3xl">Home</span><span
+                                                        class="hidden md:block"> Home</span>
+                                        </button>
+                                    </a>
+                                        
+                                        <a href="notification.html">
+                                        <button class="flex md:justify-start items-center justify-center gap-3 md:w-fit px-2 hover:bg-gray-900 hover:cursor-pointer hover:rounded-full">
+                                        <span class="material-symbols-outlined text-3xl">Notifications</span>
+                                        <span class="hidden md:block">Notifications</span>
+                                        </button>
+                                        </a>
+                                        
+                                       
+                                        <a href="profile.html"
+                                                class="flex md:justify-start items-center justify-center gap-3  md:w-fit px-2 hover:bg-gray-900 hover:cursor-pointer hover:rounded-full">
+                                                <span class="material-symbols-outlined text-3xl">person</span><span
+                                                class="hidden md:block"> Profile</span>
+                                   
+                                        </a>
+                                
+                                        
+                                        <a href="commu.html">
+                                        <button class="flex md:justify-start items-center justify-center gap-3 md:w-fit px-2 hover:bg-gray-900 hover:cursor-pointer hover:rounded-full">
+                                                <span class="material-symbols-outlined text-3xl">people</span>
+                                                <span class="hidden md:block">Communities</span>
+                                            </button>
+                                        </a>
+                                        <li>
+                                                <div class="button w-full text-center my-4 ">
+                                                        <button
+                                                                class="hidden md:block bg-[#1d9bf0] px-16 text-xl rounded-full py-2 text-white">Post</button>
+                                                        <button
+                                                                class="md:hidden bg-[#1d9bf0] px-4 text-xl rounded-full py-3 text-white">
+                                                                <span class="material-symbols-outlined">
+                                                                        edit
+                                                                </span>
+                                                        </button>
+                                                </div>
+
+                                        </li>
+                                </ul>
+
+
+                        </div>
+
+                </div>
+                <div class="second w-[50rem] md:w-[145%] border-x  border-gray-800">
+                        <div class="top relative flex h-10">
+                                <div class="absolute w-16 h-1 rounded-full bg-blue-500 bottom-0 left-[18%] z-10"></div>
+                                <div class="left w-1/2 flex justify-center  text-lg">Communities</div>
+                                <div class="right w-1/2 flex justify-center  text-lg">Posting</div>
+                                <div class="settings mx-2"><span class="material-symbols-outlined">
+                                                settings
+                                        </span></div>
+                        </div>
+                        <div class="w-full  h-[1px] bg-gray-700"> </div>
+                        
+                        <div class="w-full h-[1px] bg-gray-700"> </div>
+
+                        <div class="posts">
+                                <div class="post1">
+                                        <div class="flex">
+
+                                                <div class="image w-12 ">
+                                                        <img class="m-3 rounded-full"
+                                                                src="pictures/FITNESS.PNG.png"
+                                                                alt="">
+
+                                                </div>
+                                                <div class="content m-3">
+                                                        <span
+                                                                class="font-bold mx-3 hover:underline hover:cursor-pointer textwhite">
+                                                                Fitness</span> <span
+                                                                class="text-gray-500 cursor-pointer">#fitness ·
+                                                                7h</span>
+                                                        <div> Let me know if my biceps get in the way. Savage, not average. You never regret a workout.</div>
+                                                        <div class="postimg my-4 ">
+                                                                <img class="rounded-xl"
+                                                                        src="pictures/FITNESS.PNG.png"
+                                                                        alt="">
+                                                        </div>
+                                                        <div
+                                                                class="icons flex mx-3 text-gray-500 justify-center gap-14 ">
+                                                                <div
+                                                                        class="icon flex hover:text-blue-400 hover:cursor-pointer">
+
+                                                                        <span class="material-symbols-outlined">
+                                                                                mode_comment
+                                                                        </span> 81
+                                                                </div>
+                                                                <div
+                                                                        class="icon flex hover:text-green-400 hover:cursor-pointer">
+                                                                        <span class="material-symbols-outlined">
+                                                                                repeat
+                                                                        </span> 521
+                                                                </div>
+                                                                <div
+                                                                        class="icon flex hover:text-red-400 hover:cursor-pointer">
+                                                                        <span class="material-symbols-outlined">
+                                                                                favorite
+                                                                        </span> 6.7k
+                                                                </div>
+                                                                <div
+                                                                        class="icon flex hover:text-blue-400 hover:cursor-pointer">
+                                                                        <span class="material-symbols-outlined">
+
+                                                                                bar_chart_4_bars
+
+                                                                        </span> 328k
+                                                                </div>
+                                                                <div
+                                                                        class="icon flex hover:text-blue-400 hover:cursor-pointer">
+                                                                        <span class="material-symbols-outlined">
+                                                                                ios_share
+                                                                        </span>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+
+
+                                </div>
+                                <div class="w-full h-[1px] bg-gray-700"> </div>
+                                <div class="post2">
+                                        <div class="flex">
+
+                                                <div class="image w-12 ">
+                                                        <img class="m-3 rounded-full"
+                                                                src="pictures/TRAVEL.PNG.png"
+                                                                alt="">
+
+                                                </div>
+                                                <div class="content m-3">
+                                                        <span
+                                                                class="font-bold mx-3 hover:underline hover:cursor-pointer textwhite">
+                                                              Food Travel</span> <span
+                                                                class="text-gray-500 cursor-pointer">#Travelers ·
+                                                                7h</span>
+                                                        <div>Adventure is out there. Explore the unfamiliar. Quick getaway. Runaway with me? Got bit by the travel bug. Adventure awaits. Discovering the unknown.</div>
+                                                        <div class="postimg my-4 ">
+                                                                <img class="rounded-xl"
+                                                                        src="pictures/TRAVEL.PNG.png"
+                                                                        alt="">
+                                                        </div>
+                                                       
+                                                </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="w-full h-[1px] bg-gray-700"> </div>
+                                    <div class="post2">
+                                            <div class="flex">
+    
+                                                   
+                                                                <div
+                                                                        class="icons flex mx-3 text-gray-500 justify-center gap-14">
+                                                                        <div
+                                                                                class="icon flex hover:text-blue-400 hover:cursor-pointer">
+        
+                                                                                <span class="material-symbols-outlined">
+                                                                                        mode_comment
+                                                                                </span> 111
+                                                                        </div>
+                                                                        <div
+                                                                                class="icon flex hover:text-green-400 hover:cursor-pointer">
+                                                                                <span class="material-symbols-outlined">
+                                                                                        repeat
+                                                                                </span> 648
+                                                                        </div>
+                                                                        <div
+                                                                                class="icon flex hover:text-red-400 hover:cursor-pointer">
+                                                                                <span class="material-symbols-outlined">
+                                                                                        favorite
+                                                                                </span> 6k
+                                                                        </div>
+                                                                        <div
+                                                                                class="icon flex hover:text-blue-400 hover:cursor-pointer">
+                                                                                <span class="material-symbols-outlined">
+        
+                                                                                        bar_chart_4_bars
+        
+                                                                                </span> 73
+                                                                        </div>
+                                                                        <div
+                                                                                class="icon flex hover:text-blue-400 hover:cursor-pointer">
+                                                                                <span class="material-symbols-outlined">
+                                                                                        ios_share
+                                                                                </span>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                </div>
+
+
+                                </div>
+                                <div class="w-full h-[1px] bg-gray-700"> </div>
+                                <div class="post2">
+                                        <div class="flex">
+
+                                               
+                                               
+                                        </div>
+
+
+
+                                </div>
+                                <div class="w-full h-[1px] bg-gray-700"> </div>
+                                <div class="post3">
+                                        <div class="flex">
+
+                                               
+                                                
+
+                                </div>
+                                <div class="w-full h-[1px] bg-gray-700"> </div>
+                                <div class="post4">
+                                        <div class="flex">
+
+                                               
+                                               
+
+
+                                </div>
+                                <div class="w-full h-[1px] bg-gray-700"> </div>
+                        </div>
+
+
+                </div>
+                <div class="third  w-full bg-black hidden md:block ">
+                        
+                        
+
+            
+
+
+
+                        </div>
+                </div>
         </div>
 
-        <div class="community-card">
-            <h3>Food Lovers</h3>
-            <p>share recipes, tips, and food adventures with fellow foodies.</p>
-            <img src="pictures/FOOD.PNG.png" alt="Community Image">
-        </div>
-
-        <div class="community-card">
-            <h3>Riane Fitness</h3>
-            <p>Train insane or remain the same.</p>
-            <img src="pictures/FITNESS.PNG.png" alt="Community Image">
-        </div>
-
-        <div class="community-card">
-            <h3>Travel Lovers</h3>
-            <p> Wanderlust. Chasing sunsets. Adventure awaits! Lost in paradise.</p>
-            <img src="pictures/TRAVEL.PNG.png" alt="Community Image">
-        </div>
-
-        <div class="trends-section">
-            <h2>Trends for you</h2>
-            <p>#Gaming</p>
-            <p>#Foodtrip<p>
-            <p>#Travel</p>
-        </div>
-    </div>
 </body>
+
 </html>
