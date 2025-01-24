@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Communities/X</title>
+    <link rel="shortcut icon" href="https://abs.twimg.com/favicons/twitter-pip.3.ico">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+        }
+
+        .sidebar {
+            width: 15%;
+            background-color: #000000;
+            padding: 10px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.2em;
+            margin: 5px 0;
+        }
+
+        .main {
+            flex: 1;
+            padding: 20px;
+            background-color: #131212;
+        }
+
+        .communities-button {
+            background-color: #1D9BF0;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .communities-button:hover {
+            background-color: #0d8cd6;
+        }
+
+        .trends-section {
+            background-color: #1A1A1A;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        .trends-section h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .community-card {
+            background-color: #1A1A1A;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .community-card h3 {
+            font-size: 1.2em;
+            margin: 0;
+        }
+
+        .community-card p {
+            font-size: 0.9em;
+            color: #ccc;
+            margin: 5px 0 0;
+        }
+
+        .community-card img {
+            width: 60%;
+            height: auto;
+            border-radius:10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <a href="#">Home</a>
+        <a href="#">Explore</a>
+        <a href="#">Notifications</a>
+        <a href="#">Messages</a>
+        <a href="#">Bookmarks</a>
+   
+      
+    </div>
+    <div class="main">
+        <button class="communities-button">Join a Community</button>
+
+        <div class="community-card">          
+            <h3>Level Up your Gaming</h3>          
+            <p>A space for developers to share and grow together.</p>
+            <img src="pictures/GAMING.PNG.png" alt="Community Image">
+        </div>
+
+        <div class="community-card">
+            <h3>Food Lovers</h3>
+            <p>share recipes, tips, and food adventures with fellow foodies.</p>
+            <img src="pictures/FOOD.PNG.png" alt="Community Image">
+        </div>
+
+        <div class="trends-section">
+            <h2>Trends for you</h2>
+            <p>#Gaming</p>
+            <p>#Foodtrip<p>
+            <p>#Travel</p>
+        </div>
+    </div>
+</body>
+</html>
