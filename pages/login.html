@@ -2,137 +2,372 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Log in to X</title>
-  <link href="../css/output.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>X / Twitter Landing Page Example</title>
+  <!-- Tailwind CSS (CDN for demo; replace with your own build if needed) -->
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-black text-white min-h-screen flex flex-col">
   <!-- Main Container -->
   <div class="flex flex-col lg:flex-row flex-grow">
-    <!-- Left Side -->
+    <!-- Left Side (Logo or Graphic) -->
     <div class="hidden lg:flex items-center justify-end w-1/2 bg-black">
-      <img src="../assets/logo.png" alt="X Logo" class="w-80 h-80 p-2" />
+      <!-- Replace the src with your actual logo or image -->
+      <img
+        src="../assets/logo.png"
+        alt="X Logo"
+        class="w-80 h-80 p-2"
+      />
     </div>
 
-    <!-- Right Side -->
-    <div class="w-full lg:w-3/4 flex flex-col items-center justify-center px-2 space-y-1">
+    <!-- Right Side (Landing Content) -->
+    <div class="w-full lg:w-3/4 flex flex-col items-center justify-center px-4 py-10 space-y-6">
       <!-- Heading -->
-      <div class="text-start mb-4">
-        <h1 class="text-6xl font-bold mb-10">Happening now</h1>
-        <p class="text-2xl mt-4 font-bold">Join today.</p>
+      <div class="mb-4">
+        <h1 class="text-6xl mb-10 font-bold">Happening now</h1>
+        <p class="text-2xl font-bold">Join today.</p>
       </div>
 
       <!-- Sign Up Options -->
-      <div class="w-full max-w-md">
-        <button class="w-1/2 mb-2 flex items-center justify-start px-4 py-2 bg-white text-black rounded-full border border-gray-700 hover:bg-gray-100">
-          <img src="https://e7.pngegg.com/pngimages/882/225/png-clipart-google-logo-google-logo-google-search-icon-google-text-logo-thumbnail.png" alt="Google" class="w-5 h-5 mr-2" />
+      <div class="w-full max-w-md space-y-3">
+        <!-- Sign up with Google -->
+        <button class="w-3/4 flex items-center justify-center px-4 py-2 bg-white text-black rounded-full border border-gray-700 hover:bg-gray-100">
+          <img
+            src="https://cdn-teams-slug.flaticon.com/google.jpg"
+            alt="Google"
+            class="w-6 h-6 mr-2"
+          />
           Sign up with Google
         </button>
-        <button class="w-1/2 flex items-center justify-start px-4 py-2 bg-white text-black rounded-full border border-gray-700 hover:bg-gray-100 font-medium">
-          <img src="https://cdn.iconscout.com/icon/free/png-256/free-apple-logo-icon-download-in-svg-png-gif-file-formats--70-flat-social-icons-color-pack-logos-432495.png?f=webp&w=256" alt="Apple" class="w-5 h-5 mr-2" />
-          Sign up with Apple
+
+        <!-- Sign up with Apple -->
+        <button class="w-3/4 flex items-center justify-center px-4 py-2 bg-white text-black rounded-full border border-gray-700 hover:bg-gray-100">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/0/747.png"
+            alt="Apple"
+            class="w-5 h-5 mr-2"
+          />
+          <p class="font-bold">Sign up with Apple</p>
         </button>
-        <div class="w-1/2 flex items-center justify-start my-2 text-gray-400">
-          <span class="h-px w-full bg-gray-600"></span>
+
+        <!-- OR divider -->
+        <div class="flex items-center justify-center text-gray-400 w-3/4">
+          <span class="h-px flex-1 bg-gray-600"></span>
           <span class="px-4 text-sm">or</span>
-          <span class="h-px w-full bg-gray-600"></span>
+          <span class="h-px flex-1 bg-gray-600"></span>
         </div>
-        <button class="w-1/2 px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600">
+
+        <!-- Create Account -->
+        <button class="w-3/4 px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600">
           Create account
         </button>
-        <p class="text-xs w-1/2 text-gray-400">By signing up, you agree to the Terms of Service and Privacy Policy, including Cookie Use.</p>
+
+        <!-- Terms / Privacy Info -->
+        <p class="text-xs w-3/4 text-center text-gray-400 mt-2">
+          By signing up, you agree to the Terms of Service and Privacy Policy,
+          including Cookie Use.
+        </p>
       </div>
 
-      <!-- Sign In Section -->
-      <div class="w-full max-w-md">
-        <p class="text-start justify-start mr-auto text-gray-100 font-bold mt-6">Already have an account?</p>
-        <button id="signInBtn" class="w-1/2 text-center px-6 py-2 text-blue-500 font-bold rounded-full border mt-5">
+      <!-- Already have an account -->
+      <div class="w-3/4 max-w-md">
+        <p class="text-gray-100 font-bold mt-6">Already have an account?</p>
+        <!-- This button opens the sign-in modal -->
+        <button
+          id="openSignIn"
+          class="w-3/4 text-center px-6 py-2 text-blue-500 font-bold rounded-full border mt-5 hover:bg-gray-700"
+        >
           Sign in
         </button>
       </div>
     </div>
   </div>
 
-  <!-- Modals -->
-  <!-- Email Modal -->
-  <div id="emailModal" class="hidden fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center">
-    <div class="bg-gray-800 text-white rounded-lg p-6 w-96">
-      <h2 class="text-lg font-bold mb-4">Sign In</h2>
-      <input id="emailInput" type="email" placeholder="Enter your email" class="w-full px-4 py-2 border border-gray-600 rounded bg-black text-white placeholder-gray-500 focus:outline-none focus:ring focus:ring-blue-500" />
-      <p id="emailError" class="hidden text-red-500 text-sm mt-2">Incorrect email. Try again.</p>
-      <div class="flex justify-end mt-4">
-        <button id="emailNextBtn" class="px-4 py-2 bg-blue-500 rounded hover:bg-blue-600 text-white">Next</button>
+  <!-- ============= MODALS ============= -->
+
+  <!-- BACKDROP & MODAL 1: Sign In (Username / Email) -->
+  <div
+    id="signInModal"
+    class="fixed inset-0 bg-gray-600/50 backdrop-blur-sm flex items-center justify-center z-[9999] hidden"
+  >
+    <!-- Modal Content -->
+    <div class="bg-black rounded-lg px-14 py-2 w-11/12 max-w-md mx-auto">
+      <!-- Header Row -->
+      <div class="flex justify-start items-center space-x-4 py-2">
+        <button
+          id="closeModal1"
+          class="text-gray-400 hover:text-white font-bold text-2xl"
+        >
+          &times;
+        </button>
+        <img 
+          src="../assets/logo.png" 
+          alt="X"
+          class="w-10 h-10"
+        />
+      </div>
+
+      <h2 class="text-2xl font-bold mb-6">Sign in to X</h2>
+
+      <!-- Sign in with Google -->
+      <button
+        class="w-full mb-3 flex items-center justify-center px-4 py-2 bg-white text-black rounded-full border border-gray-300 hover:bg-gray-100"
+      >
+        <img
+          src="https://cdn-teams-slug.flaticon.com/google.jpg"
+          alt="Google"
+          class="w-5 h-5 mr-2"
+        />
+        Sign in with Google
+      </button>
+
+      <!-- Sign in with Apple -->
+      <button
+        class="w-full mb-3 flex items-center justify-center px-4 py-2 bg-white text-black rounded-full border border-gray-300 hover:bg-gray-100"
+      >
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
+          alt="Apple"
+          class="w-5 h-5 mr-2"
+        />
+        Sign in with Apple
+      </button>
+
+      <!-- Divider -->
+      <div class="flex items-center justify-center my-4 text-gray-400">
+        <span class="h-px flex-1 bg-gray-600"></span>
+        <span class="px-3 text-sm">or</span>
+        <span class="h-px flex-1 bg-gray-600"></span>
+      </div>
+
+      <!-- User Email / Username Input -->
+      <div class="space-y-3">
+        <input
+          id="userEmail"
+          type="text"
+          placeholder="Email or username"
+          class="w-full px-4 py-2 border border-gray-600 rounded bg-black text-white placeholder-gray-500 focus:outline-none focus:ring focus:ring-blue-500"
+        />
+        <p
+          id="emailError"
+          class="text-red-500 text-sm hidden"
+        >
+          The email/username is incorrect.
+        </p>
+
+        <!-- Next button to go to Password Modal -->
+        <button
+          id="goToPassword"
+          class="w-full px-4 py-2 bg-white text-slate-800 rounded-full font-semibold"
+        >
+          Next
+        </button>
+
+        <button
+          class="w-full px-4 py-2 text-white rounded-full border"
+        >
+          Forgot Password
+        </button>
+
+        <div class="flex gap-2 py-6">
+          <p class="text-slate-400">
+            Don't have an account?
+          </p>
+          <p class="text-blue-500 cursor-pointer">
+            Signup
+          </p>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- Password Modal -->
-  <div id="passwordModal" class="hidden fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center">
-    <div class="bg-gray-800 text-white rounded-lg p-6 w-96">
-      <h2 class="text-lg font-bold mb-4">Enter Password</h2>
-      <input id="passwordInput" type="password" placeholder="Enter your password" class="w-full px-4 py-2 border border-gray-600 rounded bg-black text-white placeholder-gray-500 focus:outline-none focus:ring focus:ring-blue-500" />
-      <p id="passwordError" class="hidden text-red-500 text-sm mt-2">Incorrect password. Try again.</p>
-      <div class="flex justify-end mt-4">
-        <button id="loginBtn" class="px-4 py-2 bg-blue-500 rounded hover:bg-blue-600 text-white">Login</button>
+  <!-- BACKDROP & MODAL 2: Password Step -->
+  <div
+    id="passwordModal"
+    class="fixed inset-0 bg-slate-600/50 backdrop-blur-sm flex items-center justify-center z-[9999] hidden"
+  >
+    <!-- Modal Content -->
+    <div class="bg-black rounded-lg p-6 w-11/12 max-w-md mx-auto">
+      <!-- Header Row -->
+      <div class="flex justify-start items-center space-x-4 py-2">
+        <button
+          id="closeModal2"
+          class="text-gray-400 hover:text-white font-bold text-2xl"
+        >
+          &times;
+        </button>
+        <img
+          src="../assets/logo.png"
+          alt="X"
+          class="w-10 h-10"
+        />
+      </div>
+
+      <h2 class="text-2xl font-bold mb-6">Enter your password</h2>
+
+      <!-- Show the userEmail from previous modal -->
+      <input
+        id="displayEmail"
+        type="text"
+        class="w-full px-4 py-2 border border-gray-600 rounded bg-black text-white placeholder-gray-500 focus:outline-none focus:ring focus:ring-blue-500 mb-4"
+        readonly
+      />
+
+      <!-- Password Input -->
+      <input
+        id="userPassword"
+        type="password"
+        placeholder="Password"
+        class="w-full px-4 py-2 border border-gray-600 rounded bg-black text-white placeholder-gray-500 focus:outline-none focus:ring focus:ring-blue-500 mb-4"
+      />
+
+      <!-- Error display if password is incorrect -->
+      <p
+        id="passwordError"
+        class="text-red-500 text-sm hidden"
+      >
+        The password is incorrect.
+      </p>
+
+      <!-- Sign In button -->
+      <button
+        id="finalSignInBtn"
+        class="w-full px-4 py-3 mt-14 bg-white text-black font-bold rounded-full hover:bg-slate-100"
+      >
+        Log in
+      </button>
+
+      <div class="flex gap-2 py-6">
+        <p class="text-slate-400">
+          Don't have an account?
+        </p>
+        <p class="text-blue-500 cursor-pointer">
+          Signup
+        </p>
       </div>
     </div>
   </div>
-
-
 
   <!-- Footer -->
   <footer class="w-full py-4 text-center bg-black text-gray-500 mt-8">
     <div class="flex flex-wrap items-center justify-center gap-4 text-sm">
       <a href="#" class="hover:underline">About</a>
+      <a href="#" class="hover:underline">Download the X app</a>
+      <a href="#" class="hover:underline">Help Center</a>
       <a href="#" class="hover:underline">Terms of Service</a>
       <a href="#" class="hover:underline">Privacy Policy</a>
       <a href="#" class="hover:underline">Cookie Policy</a>
       <a href="#" class="hover:underline">Accessibility</a>
-      <a href="#" class="hover:underline">Help Center</a>
+      <a href="#" class="hover:underline">Ads info</a>
       <a href="#" class="hover:underline">Blog</a>
       <a href="#" class="hover:underline">Careers</a>
+      <a href="#" class="hover:underline">Brand Resources</a>
+      <a href="#" class="hover:underline">Advertising</a>
+      <a href="#" class="hover:underline">Marketing</a>
+      <a href="#" class="hover:underline">X for Business</a>
+      <a href="#" class="hover:underline">Developers</a>
+      <a href="#" class="hover:underline">Directory</a>
+      <a href="#" class="hover:underline">Settings</a>
     </div>
     <p class="mt-4">© 2025 X Corp.</p>
   </footer>
 
+  <!-- ====== JavaScript: Basic Flow ====== -->
   <script>
-    // Elements
-    const signInBtn = document.getElementById("signInBtn");
-    const emailModal = document.getElementById("emailModal");
-    const passwordModal = document.getElementById("passwordModal");
-    const emailNextBtn = document.getElementById("emailNextBtn");
-    const loginBtn = document.getElementById("loginBtn");
-    const emailInput = document.getElementById("emailInput");
-    const passwordInput = document.getElementById("passwordInput");
-    const emailError = document.getElementById("emailError");
-    const passwordError = document.getElementById("passwordError");
+    // Landing Page Buttons
+    const openSignIn  = document.getElementById('openSignIn');
 
-    // Open Email Modal
-    signInBtn.addEventListener("click", () => {
-      emailModal.classList.remove("hidden");
+    // First Modal Elements
+    const signInModal    = document.getElementById('signInModal');
+    const closeModal1    = document.getElementById('closeModal1');
+    const goToPassword   = document.getElementById('goToPassword');
+    const emailError     = document.getElementById('emailError');
+    const userEmail      = document.getElementById('userEmail');
+
+    // Second Modal Elements
+    const passwordModal  = document.getElementById('passwordModal');
+    const closeModal2    = document.getElementById('closeModal2');
+    const displayEmail   = document.getElementById('displayEmail');
+    const userPassword   = document.getElementById('userPassword');
+    const passwordError  = document.getElementById('passwordError');
+    const finalSignInBtn = document.getElementById('finalSignInBtn');
+
+    // ======= Utility: Toggle body overflow =======
+    function toggleBodyOverflow(lock) {
+      if (lock) {
+        document.body.classList.add('overflow-hidden');
+      } else {
+        document.body.classList.remove('overflow-hidden');
+      }
+    }
+
+    // ============= Open Sign-In Modal ============
+    openSignIn.addEventListener('click', () => {
+      signInModal.classList.remove('hidden');
+      toggleBodyOverflow(true);
     });
 
-    // Validate Email and Open Password Modal
-    emailNextBtn.addEventListener("click", () => {
-      if (emailInput.value === "maricar@gmail.com") {
-        emailError.classList.add("hidden");
-        emailModal.classList.add("hidden");
-        passwordModal.classList.remove("hidden");
-      } else {
-        emailError.classList.remove("hidden");
+    // ========== Close Sign-In Modal (X button) ==========
+    closeModal1.addEventListener('click', () => {
+      signInModal.classList.add('hidden');
+      toggleBodyOverflow(false);
+    });
+
+    // ========== Close Sign-In Modal when clicking outside content ==========
+    window.addEventListener('click', (e) => {
+      if (e.target === signInModal) {
+        signInModal.classList.add('hidden');
+        toggleBodyOverflow(false);
       }
     });
 
-    // Validate Password and Redirect
-    loginBtn.addEventListener("click", () => {
-      if (passwordInput.value === "kangkang") {
-        passwordError.classList.add("hidden");
-        window.location.href = "home.html";
+    // ========== Validate Email / Username and Proceed ==========
+    goToPassword.addEventListener('click', () => {
+      // If the user typed "maricar@gmail.com", go to password modal
+      if (userEmail.value.trim().toLowerCase() === 'maricar@gmail.com') {
+        emailError.classList.add('hidden'); // hide error
+
+        // Hide Sign-In Modal
+        signInModal.classList.add('hidden');
+
+        // Show Password Modal
+        passwordModal.classList.remove('hidden');
+        toggleBodyOverflow(true);
+
+        // Populate the email input in password modal
+        displayEmail.value = userEmail.value.trim();
       } else {
-        passwordError.classList.remove("hidden");
+        // Show error message
+        emailError.classList.remove('hidden');
+      }
+    });
+
+    // ========== Password Modal: Close / Validation ==========
+    // Close Password modal (X button)
+    closeModal2.addEventListener('click', () => {
+      passwordModal.classList.add('hidden');
+      toggleBodyOverflow(false);
+    });
+
+    // Close when clicking outside the Password Modal content
+    window.addEventListener('click', (e) => {
+      if (e.target === passwordModal) {
+        passwordModal.classList.add('hidden');
+        toggleBodyOverflow(false);
+      }
+    });
+
+    // Final sign-in button
+    finalSignInBtn.addEventListener('click', () => {
+      // If the user typed "kangkang", redirect to home.html
+      if (userPassword.value === 'kangkang') {
+        passwordError.classList.add('hidden');
+        window.location.href = 'home.html';
+      } else {
+        // Show error and do NOT redirect
+        passwordError.classList.remove('hidden');
       }
     });
   </script>
-  
 </body>
 </html>
